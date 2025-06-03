@@ -1,0 +1,47 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <div class="container-fluid">
+      
+      <img class="m-2" src="/media/logo.avif" alt="" width="150" >
+      {% comment %} <a class="navbar-brand fw-bold" href="#">CODIFICA360</a> {% endcomment %}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="m-2 nav-item">
+            <a class=" nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+          </li>
+{% comment %}           <li class="m-2 nav-item">
+            <a class="nav-link" href="#">Servicios</a>
+          </li>
+
+          <li class="m-2 nav-item"> 
+            <a class="nav-link" href="#">Portfolio </a>
+          </li>
+
+          <li class="m-2 nav-item"> 
+            <a class="nav-link" href="#">Sobre Nosotros  </a>
+          </li>
+
+          <li class="m-2 nav-item"> 
+            <a class="nav-link" href="#">Blog  </a>
+          </li>
+
+          <li class="m-2 nav-item"> 
+            <a class="nav-link" href="#">Contacto   </a>
+          </li> {% endcomment %}
+
+
+      {% comment %}     <li class="m-2 nav-item">
+            <a class="nav-link disabled">Deshabilitado</a>
+          </li> {% endcomment %}
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
