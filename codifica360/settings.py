@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'portfolio',  # Custom app for portfolio
     'blog',  # Custom app for the blog
     'contact',  # Custom app for contact form
+    'ecommerce',  # Custom app for e-commerce functionality
+    'pais',  # Custom app for country management
 ]
 
 MIDDLEWARE = [
