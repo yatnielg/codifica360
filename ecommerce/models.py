@@ -172,7 +172,7 @@ class Role(models.Model):
 ########################################################################################################################################
 class Earnings(models.Model):
     role = models.ForeignKey(Role, on_delete=models.CASCADE)  # Cargo que recibe el pago
-    categoria = models.ForeignKey(Category, on_delete=models.SET_NULL)  # Categoría si no hay producto
+    categoria = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)  # Categoría si no hay producto
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)  # Producto específico    
     monto = models.DecimalField(max_digits=10, decimal_places=2)  # Cantidad de dinero que gana
 
@@ -184,9 +184,9 @@ class SalesOrder(models.Model):
     negocio = models.ForeignKey(Negocio, on_delete=models.CASCADE)  # Tienda que vende los productos
     created_at = models.DateTimeField(auto_now_add=True)  # Fecha de creación de la orden
     updated_at = models.DateTimeField(auto_now=True)  # Fecha de actualización de la orden
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)  # Cliente que realiza la orden
-    warehouses_origen = models.ForeignKey(Warehouses, on_delete=models.CASCADE, blank=True, null=True)  # Almacén de origen de la orden
-    warehouses_destino = models.ForeignKey(Warehouses, on_delete=models.CASCADE, blank=True, null=True)  # Almacén de destino de la orden
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)  # Cliente que realiza la orden   
+    warehouses_origen = models.ForeignKey(Warehouses, on_delete=models.CASCADE, related_name="ordenes_origen")
+    warehouses_destino = models.ForeignKey(Warehouses, on_delete=models.CASCADE, related_name="ordenes_destino")
     estado = models.CharField(
     max_length=50,
     choices=[
